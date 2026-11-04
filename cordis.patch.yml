@@ -1,0 +1,6 @@
+# dsh-quote-ask Web bundle patch.
+# The host row is inert; it mounts the package's browser client entry.
+
+- insert:
+    - id: quote-ask
+      name: dsh-quote-ask

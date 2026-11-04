@@ -1,0 +1,64 @@
+{
+  "name": "dsh-quote-ask",
+  "version": "0.1.0",
+  "description": "Select text in a DSH conversation and ask a targeted follow-up about it: a floating quote button, an action on every assistant message, and a quote card above the composer.",
+  "license": "MIT",
+  "author": "jianhang-XuB",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jianhang-XuB/dsh-quote-ask.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jianhang-XuB/dsh-quote-ask/issues"
+  },
+  "homepage": "https://github.com/jianhang-XuB/dsh-quote-ask#readme",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "quote",
+    "selection",
+    "follow-up",
+    "conversation"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "prepack": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-input-trigger"
+      ]
+    }
+  }
+}

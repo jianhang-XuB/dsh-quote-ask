@@ -1,0 +1,3 @@
+# Normalize line endings: this repository is authored on Windows but consumed
+# everywhere; keep LF so the committed bundle matches the built artifact exactly.
+* text=auto eol=lf
